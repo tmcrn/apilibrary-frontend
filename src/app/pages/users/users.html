@@ -1,1 +1,39 @@
-<p>users works!</p>
+<h1>Créer un utilisateur</h1>
+<form nz-form nzLayout="horizontal" [formGroup]="userForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+        <nz-form-label nzSpan="4" nzRequired>
+            Prénom
+        </nz-form-label>
+
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis">
+            <input nz-input placeholder="Prénom" formControlName="FirstName">
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label nzSpan="4" nzRequired>
+            Nom
+        </nz-form-label>
+
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis">
+            <input nz-input placeholder="Nom" formControlName="Nom">
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label nzSpan="4" nzRequired>
+            Email
+        </nz-form-label>
+
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis">
+            <input nz-input placeholder="Email" formControlName="Email">
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-flex nzJustify="end">
+
+        <button nz-button nzType="primary" type="submit">
+            Créer
+        </button>
+    </nz-flex>
+</form>

@@ -1,1 +1,32 @@
-<p>authors works!</p>
+<h1>Créer un auteur</h1>
+<form nz-form nzLayout="horizontal" [formGroup]="authorForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+        <nz-form-label nzSpan="4" nzRequired>
+            Nom
+        </nz-form-label>
+
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis">
+            <input nz-input placeholder="Nom" formControlName="name">
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label nzSpan="4" nzRequired>
+            Prénom
+        </nz-form-label>
+
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis et doit respécté : mail@mail.com">
+            <input nz-input placeholder="Prénom" formControlName="firstname">
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-flex nzJustify="end">
+        <!--        <button nz-button nzType="primary" (click)="submitForm()">-->
+        <!--            Valider-->
+        <!--        </button>-->
+
+        <button nz-button nzType="primary" type="submit">
+            Créer
+        </button>
+    </nz-flex>
+</form>
