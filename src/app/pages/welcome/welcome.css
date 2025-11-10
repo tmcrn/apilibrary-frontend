@@ -1,0 +1,74 @@
+:host {
+    display: flex;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.app-layout {
+    height: 100vh;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    background: #001529;
+    padding: 0;
+}
+
+.logo {
+    color: white;
+    margin: 0 0 0 20px;
+    font-size: 20px;
+}
+
+.header-trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: white;
+}
+
+.header-trigger:hover {
+    color: #1890ff;
+}
+
+.trigger {
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+nz-header {
+    background: #001529;
+    padding: 0;
+}
+
+nz-content {
+    margin: 24px;
+}
+
+.inner-content {
+    padding: 24px;
+    background: #fff;
+    min-height: 360px;
+}
+
+nz-footer {
+    text-align: center;
+}
+
+nz-breadcrumb {
+    margin: 16px 0;
+}
+
+nz-sider {
+    background: #001529;
+}
+
+.inner-layout {
+    padding: 0;
+}

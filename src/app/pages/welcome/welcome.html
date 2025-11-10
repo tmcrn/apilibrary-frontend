@@ -1,1 +1,65 @@
-<p>welcome works!</p>
+<nz-layout class="app-layout">
+    <!-- Header Top -->
+    <nz-header>
+        <div class="app-header">
+      <span class="header-trigger" (click)="isCollapsed.set(!isCollapsed())">
+        <span class="trigger" nz-icon [nzType]="isCollapsed() ? 'menu-unfold' : 'menu-fold'"></span>
+      </span>
+            <h1 class="logo">Bibliothèque</h1>
+        </div>
+    </nz-header>
+
+    <nz-layout>
+        <!-- Sidebar -->
+        <nz-sider
+                nzCollapsible
+                [nzCollapsed]="isCollapsed()"
+                [nzTrigger]="null"
+                nzBreakpoint="lg"
+                [nzCollapsedWidth]="0">
+
+            <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed()">
+
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/welcome/books">
+                        <span nz-icon nzType="book"></span>
+                        <span>Livres</span>
+                    </a>
+                </li>
+
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/welcome/authors">
+                        <span nz-icon nzType="user"></span>
+                        <span>Auteurs</span>
+                    </a>
+                </li>
+
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/welcome/users">
+                        <span nz-icon nzType="team"></span>
+                        <span>Utilisateurs</span>
+                    </a>
+                </li>
+
+                <li nz-menu-item nzMatchRouter>
+                    <a routerLink="/welcome/loans">
+                        <span nz-icon nzType="swap"></span>
+                        <span>Emprunts</span>
+                    </a>
+                </li>
+            </ul>
+        </nz-sider>
+
+        <!-- Content -->
+        <nz-layout class="inner-layout">
+
+            <nz-content>
+                <div class="inner-content">
+                    <router-outlet />
+                </div>
+            </nz-content>
+
+            <nz-footer>Bibliothèque ©2025</nz-footer>
+        </nz-layout>
+    </nz-layout>
+</nz-layout>
