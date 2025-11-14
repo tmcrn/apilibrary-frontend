@@ -1,1 +1,51 @@
-<p>loans works!</p>
+<h1>Créer un emprunt</h1>
+<form nz-form nzLayout="horizontal" [formGroup]="loanForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+        <nz-form-label nzSpan="4" nzRequired="">
+            Titre du livre
+        </nz-form-label>
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis">
+            <input nz-input placeholder="Titre" formControlName="book">
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label nzSpan="4" nzRequired="">
+            Nom de l'utilisateur
+        </nz-form-label>
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis">
+            <input nz-input placeholder="Nom" formControlName="user">
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label nzSpan="4" nzRequired="">
+            Date de l'emprunt
+        </nz-form-label>
+
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis">
+            <nz-date-picker
+                    formControlName="Date"
+                    nzFormat="dd/MM/yyyy"
+                    nzPlaceHolder="Choisir une date"
+            ></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+
+
+    <nz-form-item>
+        <nz-form-label nzSpan="4" nzRequired="">
+            Date de retour de l'emprunt
+        </nz-form-label>
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis">
+            <input nz-input placeholder="Nom" formControlName="PlannedReturningDate">
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-flex nzJustify="end">
+
+        <button nz-button nzType="primary" type="submit">
+            Créer
+        </button>
+    </nz-flex>
+</form>

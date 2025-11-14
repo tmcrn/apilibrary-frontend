@@ -1,8 +1,45 @@
-<h3>Les livres</h3>
-<ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
-    @for (item of data; track item) {
-        <li nz-list-item nzNoFlex>
-            {{ item }}
-        </li>
-    }
-</ul>
+<h1>Créer un livre</h1>
+<form nz-form nzLayout="horizontal" [formGroup]="bookForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+        <nz-form-label nzFor="title" nzRequired nzSpan="4">
+            Titre
+        </nz-form-label>
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis">
+            <input nz-input id="title" placeholder="Titre" formControlName="title" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label nzFor="author" nzRequired nzSpan="4">
+            Auteur
+        </nz-form-label>
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis">
+            <input nz-input id="author" placeholder="Auteur" formControlName="author" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label nzFor="releaseYear" nzRequired nzSpan="4">Année de publication</nz-form-label>
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis">
+            <nz-date-picker
+                    nzMode="year"
+                    formControlName="releaseYear"
+                    nzFormat="yyyy"
+                    nzPlaceHolder="Choisir une date"
+            ></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label nzFor="ISBN" nzRequired nzSpan="4">ISBN</nz-form-label>
+        <nz-form-control nzSpan="20" nzErrorTip="Ce champ est requis">
+            <input nz-input id="ISBN" placeholder="13 chiffres : 1111111111111" formControlName="ISBN" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-flex nzJustify="end">
+        <button nz-button nzType="primary" type="submit">
+            Créer
+        </button>
+    </nz-flex>
+</form>
