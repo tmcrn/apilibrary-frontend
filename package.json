@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
-  },
+    "watch": "ng build --watch --configuration development",
+    "openapi": "rimraf src/app/services/api && openapi-generator-cli generate -i http://localhost:5183/swagger/v1/swagger.json -g typescript-angular -o src/app/services/api -c openapi-generator.yaml"  },
   "prettier": {
     "printWidth": 100,
     "singleQuote": true,
@@ -27,6 +27,7 @@
     "@angular/forms": "^20.3.0",
     "@angular/platform-browser": "^20.3.0",
     "@angular/router": "^20.3.0",
+    "@openapitools/openapi-generator-cli": "^2.25.0",
     "ng-zorro-antd": "^20.4.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -37,6 +38,7 @@
     "@angular/cli": "^20.3.9",
     "@angular/compiler-cli": "^20.3.0",
     "less": "^4.2.0",
+    "rimraf": "^6.1.2",
     "typescript": "~5.9.2"
   }
 }
